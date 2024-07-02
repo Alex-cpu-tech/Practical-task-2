@@ -4,7 +4,7 @@
 #include <windows.h>
 
 // Функція для обчислення найбільшого спільного дільника (НСД) використовуючи алгоритм Евкліда
-int gcd(int a, int b) {
+int y(int a, int b) {
     while (b != 0) {
         int temp = b;
         b = a % b;
@@ -14,8 +14,8 @@ int gcd(int a, int b) {
 }
 
 // Функція для обчислення найменшого спільного кратного (НСК) двох чисел
-int lcm(int a, int b) {
-    return (a * b) / gcd(a, b);
+int c(int a, int b) {
+    return (a * b) / y(a, b);
 }
 
 int main() {
@@ -39,7 +39,7 @@ int main() {
 
     int result = numbers[0];
     for (int i = 1; i < x; i++) {
-        result = lcm(result, numbers[i]);
+        result = c(result, numbers[i]);
     }
 
     printf("Найменше спільне кратне: %d\n", result);
